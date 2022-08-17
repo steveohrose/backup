@@ -1,0 +1,816 @@
+@page
+@using System.Linq
+@using Octopus.Public.Web.App.Documentation.Guides
+@model Octopus.Public.Web.Pages.Index
+
+@{
+    ViewBag.Title = "Complex Deployments Made Easy | Release Management, Deployment & Runbook Automation Tool";
+    ViewBag.MetaDescription ??= "Octopus Deploy is an automated deployment and release management tool used by leading continuous delivery teams worldwide. Start your free trial today.";
+}
+
+@section Head
+{
+    <meta name="twitter:image" content="/octopus-public/images/home/home-banner-atf.svg"/>
+    <script type="application/ld+json">
+    {
+    	"@@context": "http://schema.org",
+    	"@@type": "Organization",
+    	"name": "Octopus Deploy",
+    	"description": "Octopus Deploy is an automated deployment and release management tool used by leading continuous delivery teams worldwide.",
+    	"image": "https://octopus.com/octopus-public/images/logo.png",
+    	"logo": "https://octopus.com/octopus-public/images/logo.png",
+    	"url": "https://octopus.com",
+    	"sameAs": ["https://twitter.com/OctopusDeploy","https://linkedin.com/company/octopus-deploy","https://www.facebook.com/OctopusDeploy","https://www.youtube.com/c/Octopusdeploy","https://www.crunchbase.com/organization/octopus-deploy","https://github.com/OctopusDeploy"],
+    	"address": {
+    		"@@type": "PostalAddress",
+    		"streetAddress": "Level 4, 199 Grey St",
+    		"addressLocality": "South Brisbane, QLD",
+    		"postalCode": "4101",
+    		"addressCountry": "Australia"
+    	}
+    }
+    </script>
+}
+
+<header class="header-homepage stripe stripe-cyan stripe-curved">
+    <div class="container d-flex flex-column align-items-center bg-gradient-corporate-5 mw-100" style="--direction: 180deg;">
+        <div class="mb-4 text-normal text-center">
+            <h1>Complex deployments made easy</h1>
+            <p class="fs-20">Reliable, repeatable, traceable deployments across clouds and on-prem</p>
+        </div>
+        <div class="d-flex justify-content-center mb-3">
+            <a href="/start" class="btn btn-success btn-lg mr-4">
+                Start a trial
+                <hover-button>
+                    <svg class="homepage__btn--hover-arrow" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+                    <g fill-rule="evenodd">
+                        <path class="hover-arrow-line" d="M0 5h7"></path>
+                        <path class="hover-arrow-tip" d="M1 1l4 4-4 4" style=""></path>
+                    </g>
+                    </svg>
+                </hover-button>
+
+            </a>
+
+            <a href="/company/contact" class="btn btn-outline-primary btn-lg">
+                Contact sales
+                <hover-button>
+                    <svg class="homepage__btn--hover-arrow" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+                    <g fill-rule="evenodd">
+                        <path class="hover-arrow-line" d="M0 5h7"></path>
+                        <path class="hover-arrow-tip" d="M1 1l4 4-4 4"></path>
+                    </g>
+                    </svg>
+                </hover-button>
+            </a>
+        </div>
+        <p class="mb-5 text-muted text-center">Free 30 day trial. No credit card required.</p>
+        <div class="wistia-container box-with-shadow free-floating">
+            <script src="https://fast.wistia.com/embed/medias/ynrk1pjk8v.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+            <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
+                <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+                    <div class="wistia_embed wistia_async_ynrk1pjk8v videoFoam=true" style="height:100%;position:relative;width:100%">
+                        <div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
+                            <img src="https://fast.wistia.com/embed/medias/ynrk1pjk8v/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="section-customer-logos stripe stripe-white">
+    <div class="container">
+        <div class="marquee-container">
+            <div class="marquee-container__marquee">
+                <div class="logo-container d-flex justify-content-center align-items-center my-4">
+                    <img class="logo-container__logo-img" src="~/octopus-public/images/home/new-logos/starbucks-coffee.svg">
+                </div>
+                <div class="logo-container d-flex justify-content-center align-items-center my-4">
+                    <img class="logo-container__logo-img" src="~/octopus-public/images/home/new-logos/nasa.svg">
+                </div>
+                <div class="logo-container d-flex justify-content-center align-items-center my-4">
+                    <img class="logo-container__logo-img" src="~/octopus-public/images/home/new-logos/tyler-technologies.svg">
+                </div>
+                <div class="logo-container d-flex justify-content-center align-items-center my-4">
+                    <img class="logo-container__logo-img" src="~/octopus-public/images/home/new-logos/3m.svg">
+                </div>
+                <div class="logo-container d-flex justify-content-center align-items-center my-4">
+                    <img class="logo-container__logo-img" src="~/octopus-public/images/home/new-logos/xero.svg">
+                </div>
+                <div class="logo-container d-flex justify-content-center align-items-center my-4">
+                    <img class="logo-container__logo-img" src="~/octopus-public/images/home/new-logos/wolters-kluwer.svg">
+                </div>
+                <div class="logo-container d-flex justify-content-center align-items-center my-4">
+                    <img class="logo-container__logo-img" src="~/octopus-public/images/home/new-logos/ernst-young.svg">
+                </div>
+                <div class="logo-container d-flex justify-content-center align-items-center my-4">
+                    <img class="logo-container__logo-img" src="~/octopus-public/images/home/new-logos/easyjet.svg">
+                </div>
+                <div class="logo-container d-flex justify-content-center align-items-center my-4">
+                    <img class="logo-container__logo-img" src="~/octopus-public/images/home/new-logos/dominos-pizza.svg">
+                </div>
+            </div>
+            <div class="marquee-container__marquee">
+                <div class="logo-container d-flex justify-content-center align-items-center my-4">
+                    <img class="logo-container__logo-img" src="~/octopus-public/images/home/new-logos/starbucks-coffee.svg">
+                </div>
+                <div class="logo-container d-flex justify-content-center align-items-center my-4">
+                    <img class="logo-container__logo-img" src="~/octopus-public/images/home/new-logos/nasa.svg">
+                </div>
+                <div class="logo-container d-flex justify-content-center align-items-center my-4">
+                    <img class="logo-container__logo-img" src="~/octopus-public/images/home/new-logos/tyler-technologies.svg">
+                </div>
+                <div class="logo-container d-flex justify-content-center align-items-center my-4">
+                    <img class="logo-container__logo-img" src="~/octopus-public/images/home/new-logos/3m.svg">
+                </div>
+                <div class="logo-container d-flex justify-content-center align-items-center my-4">
+                    <img class="logo-container__logo-img" src="~/octopus-public/images/home/new-logos/xero.svg">
+                </div>
+                <div class="logo-container d-flex justify-content-center align-items-center my-4">
+                    <img class="logo-container__logo-img" src="~/octopus-public/images/home/new-logos/wolters-kluwer.svg">
+                </div>
+                <div class="logo-container d-flex justify-content-center align-items-center my-4">
+                    <img class="logo-container__logo-img" src="~/octopus-public/images/home/new-logos/ernst-young.svg">
+                </div>
+                <div class="logo-container d-flex justify-content-center align-items-center my-4">
+                    <img class="logo-container__logo-img" src="~/octopus-public/images/home/new-logos/easyjet.svg">
+                </div>
+                <div class="logo-container d-flex justify-content-center align-items-center my-4">
+                    <img class="logo-container__logo-img" src="~/octopus-public/images/home/new-logos/dominos-pizza.svg">
+                </div>
+            </div>
+        </div>
+        <h3 class="text-center fw-400">Creating happy deployments at <strong class="section-customer-logos__companies">25,000+ companies</strong></h3>
+    </div>
+</section>
+
+<section class="section-deployment-orchestration container stripe stripe-white">
+    <div class="title mb-5">
+        <p class="text-primary text-uppercase text-center">
+            Built for DevOps
+        </p>
+        <h2 class="title__heading text-center">Continuous deployment orchestration</h2>
+        <p class="title__subheading text-center mx-auto">
+            Octopus simplifies the most complicated deployments wherever you deploy your software.
+        </p>
+    </div>
+    <div class="container">
+        @* --- Build Pipeline --- *@
+        <div class="pipeline">
+            <div class="pipeline__pill pipeline__pill--pos-one d-flex position-absolute py-2 px-3 bg-cyan-20">
+                <span class="pipeline__pill--nowrap color-text-normal">Write Code</span>
+            </div>
+            <div class="pipeline__pill pipeline__pill--pos-two d-flex position-absolute py-2 px-3 bg-cyan-20">
+                <span class="pipeline__pill--nowrap color-text-normal">Build code</span>
+            </div>
+            <div class="pipeline__logo d-flex position-absolute">
+                <div class="octopus-logo-container d-flex justify-content-center align-items-center bg-cyan-50 h-100 shadow">
+                    <img class="octopus-logo-container__img" src="~/octopus-public/images/home/features-icons/octopus-deploy.svg" />
+                </div>
+            </div>
+            <div class="pipeline__pill pipeline__pill--pos-three d-flex position-absolute py-2 px-3 bg-cyan-20">
+                <span class="pipeline__pill--nowrap color-text-normal">Monitor</span>
+            </div>
+            <img class="octopus-offers__img-container__graphic col" src="~/octopus-public/images/home/devops-we-get.svg" />
+            <img class="octopus-offers__img-container__person col img-circle shadow bg-transparent p-0" src="~/octopus-public/images/home/customer-success.jpeg" />
+        </div>
+        @* --- Build Pipleine End --- *@
+        <div class="title mb-5">
+            <h3 class="title__heading mt-0">Deployment automation</h3>
+            <p class="title__subheading">
+                Modern DevOps teams know that the sooner they get working software into production, the sooner they can get real feedback and iterate. A fast, reliable, and traceable CI/CD pipeline is key to accelerating their work.
+            </p>
+        </div>
+        <div class="container d-flex mb-7 px-sm-0">
+            <div class="deployment-process row mx-auto">
+                <div class="deployment-process__step deployment-process__step--one col d-flex flex-column justify-content-between rounded bg-cyan-50 p-4">
+                    <h6 class="mt-1 text-light">1. Define your deployment process once</h6>
+                    <img class="deployment-process__img rounded"  src="~/octopus-public/images/home/deployment-automation-01.svg"/>
+                </div>
+                <div class="deployment-process__step deployment-process__step--two col d-flex flex-column justify-content-between rounded bg-cyan-50 p-4" >
+                    <h6 class="mt-1 text-light">2. Configure environments and variables </h6>
+                    <img class="deployment-process__img rounded" src="~/octopus-public/images/home/deployment-automation-02.svg"/>
+                </div>
+                <div class="deployment-process__step deployment-process__step--three col d-flex flex-column justify-content-between rounded bg-cyan-50 p-4 position-relative" >
+                    <h6 class="mt-1 text-light">3. Deploy and promote with confidence</h6>
+                    <img class="deployment-process__img rounded" src="~/octopus-public/images/home/deployment-automation-03.svg"/>
+                    <partial name="_MiniLogos" model="@(false, true)"/>
+                </div>
+            </div>
+        </div>
+        <div class="deployment-features container mb-5">
+            <p class="deployment-features__title color-text-primary text-uppercase">Enhance your deployments with rich features</p>
+            <div class="flex-gap-24 d-flex flex-column">
+                <div class="flex-gap-24 row">
+                    <div class="card-outline col rounded p-4 d-flex flex-column">
+                        <img class="card-outline__img" src="~/octopus-public/images/home/features-icons/book.svg"/>
+                        <h5 class="my-3">Runbook automation</h5>
+                        <p>Runbook automation in Octopus sits side-by-side with your deployments and gives you control over your infrastructure and applications. Automate operations tasks like routine maintenance and emergency incident recovery.</p>
+                        <a href="/features#runbooks" class="card-outline__btn-link btn btn-link">
+                            Explore runbooks
+                            <hover-button>
+                                <svg class="homepage__btn--hover-arrow" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+                                <g fill-rule="evenodd">
+                                    <path class="hover-arrow-line" d="M0 5h7"></path>
+                                    <path class="hover-arrow-tip" d="M1 1l4 4-4 4"></path>
+                                </g>
+                                </svg>
+                            </hover-button>
+                        </a>
+                    </div>
+                    <div class="card-outline col rounded p-4 d-flex flex-column">
+                        <img class="card-outline__img" src="~/octopus-public/images/home/features-icons/board.svg" />
+                        <h5 class="my-3">Release management</h5>
+                        <p>Octopus Deploy makes release management easy, auditable, and compliant. Simplified release management makes your life easy with consistent release promotion across environments, manual approvals, and release notes.</p>
+                        <a href="/features#getting-started" class="card-outline__btn-link btn btn-link">
+                            Release management
+                            <hover-button>
+                                <svg class="homepage__btn--hover-arrow" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+                                <g fill-rule="evenodd">
+                                    <path class="hover-arrow-line" d="M0 5h7"></path>
+                                    <path class="hover-arrow-tip" d="M1 1l4 4-4 4"></path>
+                                </g>
+                                </svg>
+                            </hover-button>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-outline py-4 rounded row">
+                    <div class="card-outline__card-inner card-outline__card-inner--border-cyan-20 col d-flex flex-column">
+                        <img class="card-outline__img" src="~/octopus-public/images/home/features-icons/code-file.svg" />
+                        <h5 class="my-3">API-first approach</h5>
+                        <p>API-first architecture so teams can customize Octopus to suit their workflow.</p>
+                    </div>
+                    <div class="card-outline__card-inner card-outline__card-inner--border-cyan-20 col d-flex flex-column">
+                        <img class="card-outline__img" src="~/octopus-public/images/home/features-icons/thumb.svg" />
+                        <h5 class="my-3">Role based security</h5>
+                        <p>Flexible, role-based access control lets you manage who can deploy to production, change your deployment process, infrastructure, and more.</p>
+                    </div>
+                    <div class="card-outline__card-inner col d-flex flex-column">
+                        <img class="card-outline__img" src="~/octopus-public/images/home/features-icons/multi-tenancy.svg" />
+                        <h5 class="my-3">Native multi-tenancy</h5>
+                        <p>Built-in multi-tenancy support allows you to manage deployments to a single customer or a group without duplication.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="container p-0">
+                <div class="octopus-offers row">
+                    <div class="octopus-offers__text-container col-7 mr-6">
+                        <div class="mb-6 mb-sm-2">
+                            <h3 class="mt-0">We get DevOps</h3>
+                            <p>Octopus Deploy began as a spare time project in 2010, based on our experiences with the difficulty of deploying software and delivering projects when consulting to enterprises and mid-sized companies. We get DevOps and we understand the problems preventing teams from shipping software successfully.</p>
+                         </div>
+                        <div class="mb-6 mb-sm-2">
+                            <h3 class="mt-0">You get best practices</h3>
+                            <p>Access to 500+ automation step templates and easy integration with hundreds of key technologies including Azure, AWS, GCP, and Kubernetes.</p>
+                        </div>
+                        <div>
+                            <h3 class="mt-0">Your customers get success</h3>
+                            <p>​​Your end users get success: Minimize downtime and deliver more features with advanced deployment patterns like blue/green, canary, and rolling deployments.</p>
+                        </div>
+                    </div>
+                    <div class="octopus-offers__img-container col"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section-new-in-octopus stripe stripe-white">
+    <div class="shape">
+        <svg class="shape__wave shape__wave--vertical-up fill-dark-blue" 
+             data-name="Layer 1" 
+             xmlns="http://www.w3.org/2000/svg" 
+             viewBox="0 0 700 120"
+             preserveAspectRatio="none">
+            <path
+                d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                class="shape-fill">
+            </path>
+        </svg>
+    </div>
+    <div class="bg-dark-blue h-100 pt-5">
+        <div class="container title">
+            <div class="title__heading mx-auto mb-5 text-center">
+                <p class="fw-400 text-uppercase color-text-cyan-30">
+                    New in Octopus
+                </p>
+                <h2 class="mt-0 fw-800 text-center text-light">
+                    Version control without compromise
+                </h2>
+                <p class="fs-18 fw-400 text-light">
+                    Version controlling your projects shouldn't mean working only with
+                    code. Config as Code brings together the power of Git with the
+                    usability of the Octopus UI, so you can choose to work where you're most
+                    productive.
+                </p>
+            </div>
+            <div class="title__subheading mx-auto">
+                <h4 class="text-center text-light">
+                    The power of Git with the usability of Octopus
+                </h4>
+                <p class="fw-400 text-center text-light">
+                    See your deployment process in your Git repo next to your
+                    application code and evolve them together.
+                </p>
+            </div>
+
+            <!-- timeline -->
+            <div class="cac-timeline">
+                <!-- main | commit 1 -->
+                <div class="cac-timeline__git-main">
+                    <svg class="commit" xmlns="http://www.w3.org/2000/svg" height="30" width="30" viewBox="0 0 80 80">
+                        <circle class="commit__circle fill-dark-blue" cx="40" cy="40" r="25" stroke-width="4"></circle>
+                    </svg>
+                </div>
+                <!-- main | commit 1 -->
+                
+                <!-- main | commit 2 -->
+                <div class="cac-timeline__git-main">
+                    <svg class="commit" xmlns="http://www.w3.org/2000/svg" height="30" width="30" viewBox="0 0 80 80">
+                        <circle class="commit__circle fill-dark-blue" cx="40" cy="40" r="25" stroke-width="4"></circle>
+                    </svg>
+                </div>
+                <!-- main | commit 2 -->
+                
+                <!-- main | commit 3 -->
+                <div class="cac-timeline__git-main cac-timeline__git-main--has-branch">
+                    <svg class="commit" xmlns="http://www.w3.org/2000/svg" height="30" width="30" viewBox="0 0 80 80">
+                        <circle class="commit__circle fill-dark-blue" cx="40" cy="40" r="25" stroke-width="4"></circle>
+                    </svg>
+                    <div class="lottie-container">
+                        <div class="lottie-container__branch-container createBranchContainer">
+                            <div class="lottie cac-timeline__createBranch createBranch lottie-play-on-visible"></div>
+                            <h5 class="m-0 mb-3 color-white">Branch your code and deployments</h5>
+                            <p class="color-text-grey-30">Branches are Git's superpower, and we expose that power. Switch branches, or create new ones, in the Octopus UI, or your favorite git client</p>
+                        </div>
+                    </div>
+                    <svg class="git-branch" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="140" width="90" viewBox="0 0 110 142">
+                        <path d="m1-8c0 75 108 75 108 150" stroke-width="2" stroke="#3CA4F3" class="fill-dark-blue" id="branch" vector-effect="non-scaling-stroke"></path>
+                    </svg>
+                </div>
+                <!-- main | commit 3 -->
+
+                <!-- feature | commit 4 -->
+                <div class="git-feature-branch git-feature-branch__nested">
+                    <svg class="commit position-absolute" xmlns="http://www.w3.org/2000/svg" height="30" width="30" viewBox="0 0 80 80">
+                        <circle class="commit__circle fill-dark-blue" cx="40" cy="40" r="25" stroke-width="4"></circle>
+                    </svg>
+                </div>
+                <!-- feature | commit 4 -->
+
+                <!-- feature | commit 5 -->
+                <div class="git-feature-branch git-feature-branch__nested">
+                    <svg class="commit" xmlns="http://www.w3.org/2000/svg" height="30" width="30" viewBox="0 0 80 80">
+                        <circle class="commit__circle fill-dark-blue" cx="40" cy="40" r="25" stroke-width="4"></circle>
+                    </svg>
+                    <div class="lottie-container__iterate-deploy iterateDeployContainer">
+                        <div class="lottie iterateDeploy lottie-play-on-visible"></div>
+                        <h5 class="mt-0 mb-3 color-white">Iterate and deploy</h5>
+                        <p class="color-text-grey-30">Commit changes to your deployment process on a branch, and add (optional) commit messages. Create releases directly from branches, and deploy to test your changes. Support multiple versions of your deployment process simultaneously</p>
+                    </div>
+                </div>
+                <!-- feature | commit 5 -->
+
+                <!-- feature | commit 6 -->
+                <div class="git-feature-branch git-feature-branch__nested git-feature-branch__nested--is-last">
+                    <svg class="commit" xmlns="http://www.w3.org/2000/svg" height="30" width="30" viewBox="0 0 80 80">
+                        <circle class="commit__circle fill-dark-blue" cx="40" cy="40" r="25" stroke-width="4"></circle>
+                    </svg>
+                </div>
+                <!-- feature | commit 6 -->
+
+                <!-- main | commit 7 -->
+                <div class="cac-timeline__git-main cac-timeline__git-main--lg cac-timeline__git-main--has-branch">
+                    <svg class="git-branch" style="transform: scaleY(-1);" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="140" width="90" viewBox="0 0 110 142">
+                        <path d="m1-8c0 75 108 75 108 150" stroke-width="2" stroke="#3CA4F3" class="fill-dark-blue" id="branch" vector-effect="non-scaling-stroke"></path>
+                    </svg>
+                    <svg class="commit" xmlns="http://www.w3.org/2000/svg" height="30" width="30" viewBox="0 0 80 80">
+                        <circle class="commit__circle fill-dark-blue" cx="40" cy="40" r="25" stroke-width="4"></circle>
+                    </svg>
+                    <div class="lottie-container">
+                        <div class="lottie-container__review-merge reviewMergeContainer">
+                            <div class="lottie reviewMerge lottie-play-on-visible mb-4"></div>
+                            <h5 class="mt-0 mb-3 color-white">Review, approve, and merge</h5>
+                            <p class="color-text-grey-30">Review, approve, and merge your branches before you deploy to production. Improve the quality of your releases and reduce downtime from bad deployments</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- main | commit 7 -->
+
+                <button class="btn btn-success deploy-button" data-toggle="modal" data-target="#exampleModalCenter">Deploy to production</button>
+
+                <!-- Modal: the "modal" refers to the button above -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <div class="d-flex flex-column align-items-center my-3 mx-3">
+                                    <img src="~/octopus-public/images/home/map.png"/>
+                                    <h6 class="text-center">Ready to deploy Octopus to production?</h6>
+                                    <div class="d-flex justify-content-between h-100 w-100" style="gap: 16px;"> 
+                                        <div class="bg-light d-flex flex-column align-items-center rounded border-grey30 w-50 p-3" >
+                                            <div class="p-2 w-100">
+                                                <a href="/start" class="btn btn-success w-100">Start trial</a>
+                                            </div>
+                                            <p class="text-muted small text-center p-1">Free 30 day trial.<br/>No credit card required.</p>
+                                        </div>
+                                        <div class="bg-light d-flex flex-column align-items-center rounded border-grey30 w-50 p-3">
+                                            <div class="p-2 w-100">
+                                                <a href="/company/contact" class="btn btn-primary w-100">Contact Sales</a>
+                                            </div>
+                                            <p class="text-muted small text-center p-1 mb-0">Talk to a member of our Sales team about how Octopus can help you.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Modal -->
+
+            </div>
+            <!-- End Timeline -->
+            <partial name="_CaCWorkWhereYoureProductive" model="@(false, true)"/>
+        </div>
+    </div>
+    <div class="shape">
+        <svg class="shape__wave shape__wave--vertical-down fill-dark-blue" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 120"
+             preserveAspectRatio="none">
+            <path
+                d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                class="shape-fill">
+            </path>
+        </svg>
+    </div>
+</section>
+
+<section class="built-for-devops stripe pb-4">
+    <div class="container pt-5">
+    <svg class="position-absolute octoink d-none d-md-block" width="1068" height="1039" viewBox="0 0 1068 1039" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M473.197 8.54846C641.239 -42.2297 784.003 144.01 892.469 282.105C999.679 418.601 1105.19 583.318 1055.23 749.571C1007.42 908.71 828.799 977.586 669.438 1024.38C544.77 1060.98 421.493 1023.57 302.899 970.477C178.082 914.593 5.1364 861.423 0.0850815 724.696C-4.89298 589.952 209.947 578.375 284.258 465.892C379.905 321.111 307.15 58.7239 473.197 8.54846Z" fill="url(#paint0_linear_594_3749)"></path>
+        <defs>
+            <linearGradient id="paint0_linear_594_3749" x1="1068" y1="5.44269e-05" x2="-195.739" y2="369.441" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#C5E6FF"></stop>
+                <stop offset="1" stop-color="#E5F4FF"></stop>
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <div class="row align-items-lg-start align-items-md-center">
+
+        <!-- Content -->
+        <div class="col-12 col-md-6 col-lg-5">
+            <div class="pr-0 pr-md-1 4">
+                <header class="text-center text-md-left">
+                    <div>
+                        <span class="octopus-logo"></span>
+                    </div>
+                    <h2 class="mt-4">
+                        Built for DevOps teams by DevOps experts
+                    </h2>
+                </header>
+                <div class="ceo-quote mt-4 fs-20">
+                    <p class="fs-17">
+                        <b>Founded in 2012, we are a bootstrapped, profitable, and conservatively-managed company, with a focus on world-class engineering and customer service.</b>
+                    </p>
+                    <p class="fs-17">Our goal isn't to solve everything related to DevOps, but to focus specifically on being best-in-class in the release, deployment and operations parts of DevOps.</p>
+                    <p class="fs-17">We hope you'll combine Octopus with other best-in-class solutions to build a world-class DevOps capability.</p>
+                </div>
+                <div class="row pt-3 align-items-center">
+                    <div class="col-3 col-sm-auto">
+                        <img class="avatar" src="https://i.octopus.com/site/team-images/67d28950-85bc-4349-b201-71ce8f12d7ed.png" style="width: 80px;">
+                    </div>
+                    <div class="col-9 col-sm-8 pl-0">
+                        <p class="m-0 fs-14">
+                            <b>Paul Stovell</b>
+                        </p>
+                        <p class="m-0 fs-14 role text-muted">
+                            <i>Software developer and</i>
+                        </p>
+                        <p class="m-0 fs-14 role text-muted">
+                            <i>Founder of Octopus Deploy</i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END of Content -->
+
+            <!-- Feed -->
+            <div class="col-12 col-lg-7 mt-5 pt-5 d-none d-lg-block">
+
+                <!-- Row 1-->
+                <div class="row">
+                    <!-- Twitter card -->
+                    <div class="col-12 col-lg-6">
+                        <div class="card shadow-md">
+                            <div class="card-body">
+                                <p class="fs-14 m-0">"I like the separation of concerns and it enables me to replace one half or the other if i have new needs at some point. I've never used an all in one tool that did both CI/CD as well as a combo of Octopus + a CI / Build server."</p>
+                            </div>
+                            <div class="card-footer bg-white border-0">
+                                <div class="row">
+                                    <div class="col align-self-start">
+                                        <div class="clearfix">
+                                            <img class="float-left mr-2 avatar" src="~/octopus-public/images/home/twitter-avatar/kelly-rankin-19.jpg" style="width: 49px;">
+                                            <p class="fs-14 m-0">
+                                                <b>Kelly Rankin</b><br>
+                                                <span class="text-muted">@@KellyRankin19</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto align-self-end text-right">
+                                        <svg class="svg-inline--fa fa-twitter fa-w-16 fill-cyan-40" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                            <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case Study card -->
+                    <div class="col-12 col-lg-6 pt-5">
+                        <div class="card shadow-md p-3">
+                            <div class="card-body">
+                                <p class="fs-16 m-0">"Octopus closed the gap for us, so we can now deploy to both our data center and cloud service providers."</p>
+                            </div>
+                            <div class="card-footer bg-white border-0">
+                                <div class="clearfix">
+                                    <img class="float-left mr-2 avatar" src="~/octopus-public/images/home/new-logos/stack-overflow-sm.png" style="width: 80px">
+                                    <p class="fs-14 m-0">
+                                        <b>Chris Hunt</b><br>
+                                        <span class="text-muted">Stack Overflow</span>
+                                        <a class="btn btn-primary btn-sm mt-1"  href="~/octopus-public/documents/case-studies/stack-overflow.pdf" target="_blank">Case study</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Row 2-->
+                <div class="row mt-n4 ml-n5 align-items-center position-relative">
+                    <!-- Twitter card -->
+                    <div class="col-12 col-lg-6">
+                        <div class="card shadow-md">
+                            <div class="card-body">
+                                <p class="fs-14 m-0">"Tools like @@OctopusDeploy can be great in enabling culture change, we've been able to scale and improve our configuration story since we started using it."</p>
+                            </div>
+                            <div class="card-footer bg-white border-0">
+                                <div class="row">
+                                    <div class="col align-self-start">
+                                        <div class="clearfix">
+                                            <img class="float-left mr-2 avatar" src="~/octopus-public/images/home/twitter-avatar/neilch.jpg" style="width: 49px;">
+                                            <p class="fs-14 m-0">
+                                                <b>Neil Chalk 🛫</b><br>
+                                                <span class="text-muted">@@_neilch</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto align-self-end text-right">
+                                        <svg class="svg-inline--fa fa-twitter fa-w-16 fill-cyan-40" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                            <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Count -->
+                    <div class="px-5">
+                        <p class="fs-36 mb-0 text-dark">350,000+</p>
+                        <span>People use Octopus</span>
+                    </div>
+                </div>
+
+                <!-- Row 3-->
+                <div class="row mt-n5 ml-n5 align-items-center position-relative">
+
+                    <!-- Case Study card -->
+                    <div class="col-12 col-lg-6 pt-5 ml-n5">
+                        <div class="card shadow-md p-3 ml-n5 mt-5">
+                            <div class="card-body">
+                                <p class="fs-16 m-0">"Using Octopus Cloud allows us to focus on our expertise: recruitment software, while Octopus looks after everything else."</p>
+                            </div>
+                            <div class="card-footer bg-white border-0">
+                                <div class="clearfix">
+                                    <img class="float-left mr-2 avatar" src="~/octopus-public/images/home/new-logos/recruit-wizard-sm.png" style="width: 80px">
+                                    <p class="fs-14 m-0">
+                                        <b>Ben Macpherson</b>
+                                        <br/>
+                                        <span class="text-muted">Recruit Wizard</span>
+                                    </p>
+                                    <a class="btn btn-primary btn-sm mt-1"  href="~/octopus-public/documents/case-studies/recruit-wizard.pdf" target="_blank">Case study</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Twitter card -->
+                    <div class="col-12 col-lg-6 mt-n5 position-absolute card-custom">
+                        <div class="card shadow-md">
+                            <div class="card-body">
+                                <p class="fs-14 m-0">"We've been overhauling our internal infrastructure and back-end systems over the past month, including a move back to full @@OctopusDeploy deployments; rediscovering how nice it is to have a platform-agnostic orchestrator that can deploy practically anything, anywhere ❤️."</p>
+                            </div>
+                            <div class="card-footer bg-white border-0">
+                                <div class="row">
+                                    <div class="col align-self-start">
+                                        <div class="clearfix">
+                                            <img class="float-left mr-2 avatar" src="~/octopus-public/images/home/twitter-avatar/nblumhardt.png" style="width: 49px;">
+                                            <p class="fs-14 m-0">
+                                                <b>Nicholas Blumhardt</b>
+                                                <br/>
+                                                <span class="text-muted">@@nblumhardt</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto align-self-end text-right">
+                                        <svg class="svg-inline--fa fa-twitter fa-w-16 fill-cyan-40" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                            <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Feed Carousel -->
+            <div class="col-12 col-md-6 d-md-block d-lg-none py-5">
+                <!-- col-md-7 -->
+                <svg class="position-absolute octoink d-block d-md-none" width="375" height="362" viewBox="0 0 375 362" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M166.151 2.97645C225.154 -14.7038 275.282 50.1424 313.367 98.2247C351.011 145.751 388.057 203.103 370.517 260.99C353.728 316.4 291.011 340.381 235.056 356.674C191.282 369.419 147.996 356.393 106.355 337.906C62.5287 318.448 1.80351 299.935 0.0298741 252.329C-1.71804 205.413 73.7174 201.382 99.8096 162.217C133.394 111.806 107.848 20.4468 166.151 2.97645Z" fill="url(#paint0_linear_623_3758)"></path>
+                    <defs>
+                        <linearGradient id="paint0_linear_623_3758" x1="375" y1="1.89507e-05" x2="-68.1372" y2="130.64" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#C5E6FF"></stop>
+                            <stop offset="1" stop-color="#E5F4FF"></stop>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div id="carouselExampleIndicators" class="carousel slide py-5 py-md-0" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class=""></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2" class=""></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="3" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                    </ol>
+                    <div class="carousel-inner shadow-lg">
+
+                        <!-- Slide #1 - Twitter Card -->
+                        <div class="carousel-item">
+                            <div class="card rounded">
+                                <div class="card-body">
+                                    <p class="fs-16 m-0">"I like the separation of concerns and it enables me to replace one half or the other if i have new needs at some point. I've never used an all in one tool that did both CI/CD as well as a combo of Octopus + a CI / Build server."</p>
+                                </div>
+                                <div class="card-footer bg-white border-0">
+                                    <div class="row">
+                                        <div class="col align-self-start">
+                                            <div class="clearfix">
+                                                <img class="float-left mr-2 avatar" src="~/octopus-public/images/home/twitter-avatar/kelly-rankin-19.jpg" style="width: 49px;">
+                                                <p class="fs-16 m-0">
+                                                    <b>Kelly Rankin</b><br>
+                                                    <span class="text-muted">@@KellyRankin19</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto align-self-end text-right">
+                                            <svg class="svg-inline--fa fa-twitter fa-w-16 fill-cyan-40" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                                <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide #2 - Case Study -->
+                        <div class="carousel-item">
+                            <div class="card rounded">
+                                <div class="card-body">
+                                    <p class="fs-16 m-0">"If you want to make a change to the way the software is deployed, it should go through a PR. Just like the software itself."</p>
+                                </div>
+                                <div class="card-footer bg-white border-0">
+                                    <div class="row">
+                                        <div class="col align-self-start">
+                                            <div class="clearfix">
+                                                <img class="float-left mr-2 avatar" src="~/octopus-public/images/home/new-logos/stack-overflow-sm.png" style="width: 49px">
+                                                <div class="d-flex justify-content-between">
+                                                    <p class="fs-16 m-0">
+                                                        <b>Chris Hunt</b><br>
+                                                        <span class="text-muted">StackOverflow</span>
+                                                    </p>
+                                                    <a class="btn btn-primary btn-sm mt-1" href="~/octopus-public/documents/case-studies/stack-overflow.pdf" target="_blank" style='align-items: center; display: flex;'>Case study</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide #3 -->
+                        <div class="carousel-item">
+                            <div class="card rounded">
+                                <div class="card-body">
+                                    <p class="fs-16 m-0">"Tools like @@OctopusDeploy can be great in enabling culture change, we've been able to scale and improve our configuration story since we started using it."</p>
+                                </div>
+                                <div class="card-footer bg-white border-0">
+                                    <div class="row">
+                                        <div class="col align-self-start">
+                                            <div class="clearfix">
+                                                <img class="float-left mr-2 avatar" src="~/octopus-public/images/home/twitter-avatar/neilch.jpg" style="width: 49px;">
+                                                <p class="fs-16 m-0">
+                                                    <b>Neil Chalk 🛫</b><br>
+                                                    <span class="text-muted">@@_neilch</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto align-self-end text-right">
+                                            <svg class="svg-inline--fa fa-twitter fa-w-16 fill-cyan-40" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                                <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide #4 -->
+                        <div class="carousel-item active">
+                            <div class="card rounded">
+                                <div class="card-body">
+                                    <p class="fs-16 m-0">"Branching was an enormous benefit and sped up our process of modernisation / containerisation."</p>
+                                </div>
+                                <div class="card-footer bg-white border-0">
+                                    <div class="row">
+                                        <div class="col align-self-start">
+                                            <div class="clearfix">
+                                                <img class="float-left mr-2 avatar" src="~/octopus-public/images/home/new-logos/recruit-wizard-sm.png" style="width: 49px">
+                                                <div class="d-flex justify-content-between">
+                                                    <p class="fs-16 m-0">
+                                                        <b>Chris Hunt</b>
+                                                        <br>
+                                                        <span class="text-muted">StackOverflow</span>
+                                                    </p>
+                                                    <a class="btn btn-primary btn-sm mt-1" href="~/octopus-public/documents/case-studies/recruit-wizard.pdf" target="_blank" style='align-items: center; display: flex;'>Case study</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide #5 -->
+                        <div class="carousel-item">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="fs-16 m-0">"We've been overhauling our internal infrastructure and back-end systems over the past month, including a move back to full @@OctopusDeploy deployments; rediscovering how nice it is to have a platform-agnostic orchestrator that can deploy practically anything, anywhere ❤️."</p>
+                                </div>
+                                <div class="card-footer bg-white border-0">
+                                    <div class="row">
+                                        <div class="col align-self-start">
+                                            <div class="clearfix">
+                                                <img class="float-left mr-2 avatar" src="~/octopus-public/images/home/twitter-avatar/nblumhardt.png" style="width: 49px;">
+                                                <p class="fs-16 m-0">
+                                                    <b>Nicholas Blumhardt</b>
+                                                    <br/>
+                                                    <span class="text-muted">@@nblumhardt</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto align-self-end text-right">
+                                            <svg class="svg-inline--fa fa-twitter fa-w-16 fill-cyan-40" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                                <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev"></a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next"></a>
+                </div>
+            </div>
+
+            <!-- END of Feed -->
+            </div>
+        </div>
+</section>
+
+<partial name="Stripe" model="@Model.SupportStripeBlock"/>
+<partial name="_DefaultCTA"/>
